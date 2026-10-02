@@ -28,18 +28,27 @@
 
 | الملف | المحتوى |
 |---|---|
+| [`SKILL.md`](SKILL.md) | مهارة الوكيل: قواعد اللسان وأمثلته ودرجات البيان، وإحالة إلى الملفين التاليين. |
 | [`01_arabic_grammar_and_style.md`](01_arabic_grammar_and_style.md) | ضوابط الهيكل والترقيم، وأحكام حروف الجر، وضوابط الصياغة، ومسائل إملائية معتمدة، وأدوات الربط المنطقي. |
 | [`02_arabic_errors_and_preferences.md`](02_arabic_errors_and_preferences.md) | ثلاثة جداول: الأخطاء الشائعة القطعية، والأخطاء اللغوية مع عللها، والتفضيلات التحريرية. |
 
 ---
 
-## طريقة الاستخدام
+## التثبيت
 
-1. **تعليمات النظام المباشرة (System Prompt):** ضمِّن محتوى `01_arabic_grammar_and_style.md` في نافذة تعليمات النظام للمساعد الذكي.
+المستودع مهارة وكيل (Agent Skill) وفق مواصفة `agentskills.io`، اسمها `arabic-guide`. يُنسخ مجلده كاملاً إلى مسار مهارات الوكيل:
 
-2. **التغذية التكميلية (RAG):** ادمج `02_arabic_errors_and_preferences.md` في قاعدة المعرفة المرجعية لتدقيق المخرجات قبل عرضها للمستخدم.
+- `.agents/skills/arabic-guide/` للوكلاء الذين يقرؤون هذا المسار.
+- `.claude/skills/arabic-guide/` لـ Claude Code.
 
----
+## طريقة العمل (الإفصاح التدريجي)
+
+1. **الاكتشاف (Discovery):** لا يرى الوكيل في بدء الجلسة إلا اسم المهارة ووصفها.
+2. **التفعيل (Activation):** متى طُلبت كتابة عربية مطوّلة، أو درس، أو مقال، أو خطبة، أو تدقيق لغوي، حُمِّل `SKILL.md`.
+3. **المعايرة (Calibration):** يقرأ الوكيل `01_arabic_grammar_and_style.md` قبل الكتابة، ويختار درجة البيان على قدر المقام.
+4. **التنفيذ (Execution):** يكتب، ثم يراجع النص على جداول `02_arabic_errors_and_preferences.md` قبل تسليمه.
+
+ومن لم يستعمل المهارات فله أن يضمّن `01_arabic_grammar_and_style.md` في تعليمات النظام، و`02_arabic_errors_and_preferences.md` في قاعدة المعرفة المرجعية.
 
 ## المساهمة
 
@@ -47,8 +56,19 @@
 - **بلاغات الخلل (Issues):** للإشارة إلى أي تعارض دلالي أو خطأ نحوي.
 - **طلبات الدمج (Pull Requests):** لإضافة إحالات لغوية جديدة أو تحسين صياغة الضوابط.
 
+سجل التغييرات في [CHANGELOG.md](CHANGELOG.md).
+
 ---
 
-## الرخصة
+## بيانات المطور (Developer Details)
 
-متاح بموجب رخصة [MIT](LICENSE)، بما يتيح الاستفادة منه وتضمينه في المشاريع البرمجية بحرية تامة.
+- **المطور:** كمال ياسر (Kamal Yaser)
+- **البريد الإلكتروني:** [kamalyaser31@gmail.com](mailto:kamalyaser31@gmail.com)
+- **تيليجرام:** [@kamalyaser31](https://t.me/kamalyaser31)
+- **المستودع:** [https://github.com/kamalyaser31/arabic-guide](https://github.com/kamalyaser31/arabic-guide)
+
+---
+
+## رخصة الاستخدام (License)
+
+يخضع هذا المشروع لشروط رخصة [MIT License](LICENSE) مفتوحة المصدر.
